@@ -1,46 +1,17 @@
-# AriaLayer QA Report
+# گزارش پاک‌سازی — ۳۰ اکتبر ۲۰۲۶
 
-تاریخ بررسی: 2026-07-27
+بررسی استاتیک 101 ارجاع HTML، CSS، JSON-LD و manifest: فایل محلی مفقود یافت نشد. هش CSP و integrity معتبرند. بدنهٔ هر چهار صفحه بدون تغییر است. CSS، اسکریپت انیمیشن، robots، sitemap و تنظیمات انتشار بدون تغییرند.
 
-## بررسی‌های خودکار
+فایل‌های قدیمی حذف‌شده از این بسته (بدون ارجاع در صفحات و وابستگی‌های فعال):
+- `404.css`
+- `boot.js`
+- `script.js`
+- `assets/aria-avatar.webp`
+- `assets/aria-portrait.webp`
+- `assets/aria-nosrati-resume.pdf`
+- `assets/logo.svg`
+- `assets/og-cover.jpg`
 
-- JavaScript syntax: passed
-- CSS parsing: passed
-- JSON-LD parsing: passed
-- Web App Manifest parsing: passed
-- Duplicate HTML IDs: none
-- Broken local asset references: none
-- Missing `aria-controls` targets: none
-- Missing `aria-labelledby` targets: none
-- CSP JSON-LD SHA-256 match: passed
-- Inline `style` attributes under strict CSP: none
+آیکون‌های ICO و PNG از هندسهٔ نشان SVG فعلی بازتولید شدند؛ هر چهار صفحه آیکون و manifest هماهنگ دارند. manifest قدیمی دیگر میان‌برهای ناموجود رزومه و یادگیری ندارد. سه سند قدیمی با مستندات نسخهٔ فعلی جایگزین شدند.
 
-## تست‌های تعاملی Chromium
-
-۳۹ سناریو با موفقیت اجرا شد، شامل:
-
-- Routing و History
-- نمایش فقط یک صفحه در حالت JavaScript
-- Navigation بدون JavaScript و نمایش تمام بخش‌ها
-- عدم Horizontal Overflow در دسکتاپ و موبایل
-- مدیریت `aria-current`
-- Tabs با Mouse، Arrow Keys و Home
-- باز و بسته‌شدن Command Palette
-- Focus Trap و Focus Restoration
-- حالت Empty Search
-- تغییر زبان و جهت RTL/LTR
-- تکمیل ترجمه‌های بخش About
-- منوی موبایل، `inert` و `aria-hidden`
-- Reduced Motion و غیرفعال‌شدن Boot Animation
-
-## بررسی ضروری پس از انتشار
-
-موارد زیر فقط روی دامنه نهایی قابل تأیید هستند:
-
-```bash
-curl -I https://arialayer.ir/
-curl -I https://arialayer.ir/styles.css
-curl -I https://arialayer.ir/not-a-real-page
-```
-
-انتظار می‌رود صفحه اصلی کد `200`، مسیر ناموجود کد واقعی `404` و هدرهای CSP، HSTS، `nosniff`، Referrer Policy و Permissions Policy را برگردانند.
+این بررسی ثابت نمی‌کند URLهای قدیمی هیچ لینک خارجی ندارند. فایل PDF قدیمی در گزارش Search Console دیده شده بود؛ حذف آن یعنی آدرس قدیمی ممکن است 404 شود. نسخهٔ اصلی ZIP برای بازیابی محفوظ است. انتشار خودکار یا حذف در مخزن آنلاین انجام نشده است. مرورگر واقعی و دستگاه موبایل در این نوبت تست نشده‌اند؛ بدنه و رفتار صفحات تغییر نکرده است.

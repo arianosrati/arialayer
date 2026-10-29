@@ -2,60 +2,31 @@
   "id": "/",
   "name": "AriaLayer — Aria Nosrati",
   "short_name": "AriaLayer",
-  "description": "Personal portfolio and learning journey of Aria Nosrati, focused on backend development.",
   "lang": "fa",
   "dir": "rtl",
   "start_url": "/",
   "scope": "/",
-  "display": "standalone",
-  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
-  "background_color": "#070a08",
-  "theme_color": "#080c09",
-  "categories": ["education", "productivity", "utilities"],
+  "display": "browser",
+  "background_color": "#121212",
+  "theme_color": "#121212",
   "icons": [
     {
-      "src": "assets/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "assets/icon-192.png",
+      "src": "/assets/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "assets/icon-512.png",
+      "src": "/assets/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "assets/icon-maskable-512.png",
+      "src": "/assets/icon-maskable-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "مسیر یادگیری",
-      "short_name": "یادگیری",
-      "url": "/#learning",
-      "icons": [{"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"}]
-    },
-    {
-      "name": "رزومه",
-      "short_name": "رزومه",
-      "url": "/#resume",
-      "icons": [{"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"}]
-    },
-    {
-      "name": "تماس",
-      "short_name": "تماس",
-      "url": "/#contact",
-      "icons": [{"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"}]
     }
   ]
 }

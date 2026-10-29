@@ -1,85 +1,27 @@
 # AriaLayer
 
-وب‌سایت شخصی و مسیر یادگیری آریا نصرتی با رابط فارسی/انگلیسی، طراحی RTL/LTR و تمرکز بر توسعه بک‌اند.
+وب‌سایت شخصی دو‌زبانهٔ آریا نصرتی با HTML، CSS و JavaScript ساده؛ بدون مرحلهٔ build یا کتابخانهٔ اجرایی خارجی.
 
-## قابلیت‌ها
+## ساختار فعلی
+- `index.html`: صفحهٔ فارسی
+- `en/index.html`: صفحهٔ انگلیسی
+- `404.html` و `en/404.html`: صفحات خطا
+- `styles.css`: سبک مشترک و فونت محلی
+- `assets/motion.js`: انیمیشن‌های اختیاری با پشتیبانی از کاهش حرکت
+- `assets/aria-480.jpg` و `assets/aria-933.jpg`: تصویر واکنش‌گرا
+- `assets/arialayer-mark.svg`: نشان سایت
+- `favicon.ico`، `assets/favicon.svg` و آیکون‌های PNG: آیکون‌های هماهنگ
+- `site.webmanifest`: نام، رنگ و آیکون‌های سایت؛ بدون ادعای پشتیبانی آفلاین
+- `robots.txt` و `sitemap.xml`: راهنمای خزنده‌ها
+- `_headers` و `_redirects`: تنظیمات Cloudflare Pages
 
-- ۹ بخش با Hash Routing و لینک مستقیم
-- نسخه دو‌زبانه با ذخیره انتخاب زبان در Local Storage
-- رابط واکنش‌گرا برای دسکتاپ، تبلت و موبایل
-- Command Palette با `Ctrl/Cmd + K`
-- میانبرهای عددی `1` تا `9`
-- رزومه PDF قابل دانلود
-- فرم تماس مبتنی بر `mailto:` بدون ذخیره اطلاعات در سرویس ثالث
-- صفحه اختصاصی 404
-- Metadata کامل برای SEO و Social Preview
-- Web App Manifest و آیکون‌های استاندارد و Maskable
-- هدرهای امنیتی مناسب Cloudflare Pages
+## نگهداری
+متن هر زبان در HTML همان زبان ویرایش می‌شود. عکس، فونت و نشان مشترک‌اند. مجوز فونت در `assets/OFL.txt` نگهداری می‌شود.
+بعد از تغییر JSON-LD، هش‌های SHA-256 در CSP فایل `_headers` باید محاسبه شوند. بعد از تغییر motion.js، مقدار integrity در هر دو صفحه باید به‌روزرسانی شود.
+تاریخ dateModified باید زمان واقعی تغییر اطلاعات پروفایل با قالب ISO 8601 باشد، نه زمان هر انتشار.
 
-## دسترس‌پذیری
+## پیش‌نمایش
+از ریشهٔ پروژه `python -m http.server 8000` را اجرا و http://localhost:8000 را باز کنید. این سرور تنظیمات اختصاصی Cloudflare و رفتار خطاهای آن را شبیه‌سازی نمی‌کند.
 
-- Skip Link برای پرش به محتوای اصلی
-- ساختار صحیح Landmarkها و عنوان‌های مرتبط با هر بخش
-- منوی موبایل و Command Palette با Focus Trap، بازگرداندن Focus، `inert` و کنترل با `Esc`
-- Tabs مطابق الگوی WAI-ARIA با `role="tab"`، `aria-selected`، `tabpanel` و پشتیبانی از کلیدهای جهت‌دار، `Home` و `End`
-- `aria-current="page"` برای مسیر فعال
-- Focus Indicator یکپارچه و پشتیبانی از Forced Colors
-- رعایت `prefers-reduced-motion`
-- نسخه Progressive Enhancement: در صورت غیرفعال‌بودن یا خرابی JavaScript، تمام محتوا و لینک‌های اصلی همچنان قابل استفاده‌اند
-
-## ساختار پروژه
-
-```text
-.
-├── index.html
-├── styles.css
-├── boot.js
-├── script.js
-├── 404.html
-├── 404.css
-├── _headers
-├── robots.txt
-├── sitemap.xml
-├── site.webmanifest
-├── favicon.ico
-└── assets/
-    ├── logo.svg
-    ├── favicon.svg
-    ├── icon-192.png
-    ├── icon-512.png
-    ├── icon-maskable-512.png
-    ├── apple-touch-icon.png
-    ├── og-cover.jpg
-    ├── aria-avatar.webp
-    ├── aria-portrait.webp
-    └── aria-nosrati-resume.pdf
-```
-
-## اجرای محلی
-
-```bash
-python -m http.server 8000
-```
-
-سپس آدرس زیر را باز کنید:
-
-```text
-http://localhost:8000
-```
-
-اجرای سایت با بازکردن مستقیم `index.html` نیز ممکن است، اما برای شبیه‌سازی رفتار هاست و مسیر 404 استفاده از HTTP server توصیه می‌شود.
-
-## انتشار
-
-روش پیشنهادی Cloudflare Pages است. جزئیات در فایل `DEPLOY-CLOUDFLARE.md` قرار دارد. برای Direct Upload، خود فایل‌های این پوشه را ZIP کنید؛ `index.html` باید در ریشه ZIP باشد.
-
-## نکات نگهداری
-
-- برای افزودن پروژه، محتوای بخش `<section data-page="projects">` را با Case Study واقعی جایگزین کنید.
-- در صورت تغییر JSON-LD داخل `index.html`، SHA-256 موجود در CSP فایل `_headers` باید دوباره محاسبه شود.
-- آدرس دامنه در canonical، Open Graph، JSON-LD، robots و sitemap باید همواره یکسان بماند.
-- تصاویر و اطلاعات تماس پس از انتشار عمومی قابل مشاهده و دریافت خواهند بود.
-
-## کیفیت‌سنجی
-
-نسخه تحویلی با بررسی‌های نحوی HTML/CSS/JavaScript، اعتبار ارتباط‌های ARIA، وجود فایل‌های referenced، صحت JSON-LD و Manifest و ۳۹ تست تعاملی در Chromium بررسی شده است. جزئیات در `QA-REPORT.md` آمده است.
+راهنمای انتشار: [DEPLOY-CLOUDFLARE.md](DEPLOY-CLOUDFLARE.md)
+گزارش بررسی: [QA-REPORT.md](QA-REPORT.md)
