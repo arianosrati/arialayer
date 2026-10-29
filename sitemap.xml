@@ -1,8 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://arialayer.ir/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://arialayer.ir/</loc><lastmod>2026-10-29</lastmod><xhtml:link rel="alternate" hreflang="fa" href="https://arialayer.ir/"/><xhtml:link rel="alternate" hreflang="en" href="https://arialayer.ir/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://arialayer.ir/"/></url><url><loc>https://arialayer.ir/en/</loc><lastmod>2026-10-29</lastmod><xhtml:link rel="alternate" hreflang="fa" href="https://arialayer.ir/"/><xhtml:link rel="alternate" hreflang="en" href="https://arialayer.ir/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://arialayer.ir/"/></url></urlset>
